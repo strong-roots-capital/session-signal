@@ -1,0 +1,58 @@
+{
+  "name": "session-signal",
+  "version": "0.0.1",
+  "description": "Emit a signal at end of desired session (UTC)",
+  "main": "dist/session-signal.js",
+  "types": "dist/session-signal.d.ts",
+  "scripts": {
+    "install": "tsc",
+    "test": "ava -s",
+    "test:watch": "npm test -- --watch",
+    "dev": "concurrently \"tsc -w\" \"nodemon -e 'ts json' -x 'npm test || true'\"",
+    "watch:test": "nodemon -e 'ts json' -x 'npm test || true'",
+    "typedoc": "typedoc && cp ./doc/typedoc/README.md .",
+    "push-and-publish": "git push origin master && git push --tags && npm publish"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run typedoc && git add doc README.md && (git commit -m 'Update documentation' || true)"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strong-roots-capital/session-signal.git.git"
+  },
+  "keywords": [
+    "signal",
+    "session",
+    "end",
+    "eod"
+  ],
+  "author": "Eric Crosson <eric.s.crosson@utexas.com> (https://github.com/strong-roots-capital)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/strong-roots-capital/session-signal.git/issues"
+  },
+  "homepage": "https://github.com/strong-roots-capital/session-signal.git",
+  "dependencies": {
+    "@types/node": "^10.12.18",
+    "typescript": "^3.2.2"
+  },
+  "devDependencies": {
+    "ava": "^1.0.0",
+    "concurrently": "^4.1.0",
+    "husky": "^1.3.1",
+    "ts-node": "^7.0.1",
+    "typedoc": "^0.13.0",
+    "typedoc-plugin-markdown": "^1.1.20"
+  },
+  "ava": {
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  }
+}
