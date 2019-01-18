@@ -13,7 +13,8 @@ const cronEveryMinute = '1 * * * * *' // Every minute at one-second past
 
 
 /**
- * TODO: document
+ * Emits a `newSession` signal at the start of specified sessions
+ * (UTC).
  */
 class SessionSignal {
 
