@@ -23,6 +23,24 @@ test.afterEach(() => {
     clock.restore()
 })
 
+test('should throw ArgumentError when given an empty string', t => {
+    const error = t.throws(() => {
+        new SessionSignal([''])
+    }, Error)
+    t.is(error.message, '[NOT] Expected string `session` to be empty, got ``')
+})
+
+test('should throw ArgumentError when given nonsensical timeframes', t => {
+    const testStrings = ['5B', '5d', 'p', 'D4', '!!', 'H4', '1m']
+    testStrings.forEach((str) => {
+        const error = t.throws(() => {
+            new SessionSignal([str])
+        }, Error)
+        t.is(0, error.message.indexOf('Expected string `session` to match'))
+    })
+})
+
+
 test('assigns a subscription to a newSession event', t => {
     sessionEmitter.emit('newSession')
     t.true(spy.called)

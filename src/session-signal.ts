@@ -22,6 +22,11 @@ class SessionSignal {
     emitter: any
 
     constructor(sessions: string[]) {
+        // Reduce the feedback loop by validating `sessions`
+        // with `marketSession.fromString`s built-in validation --
+        // failures will immediately be visible
+        sessions.map(session.fromString)
+
         this.sessions = sessions
         this.emitter = new EventEmitter()
         schedule.scheduleJob(cronEveryMinute, this.timerISR.bind(null, this))
