@@ -1,4 +1,4 @@
-# session-signal [![Build Status](https://travis-ci.org/strong-roots-capital/session-signal.svg?branch=master)](https://travis-ci.org/strong-roots-capital/session-signal) [![npm version](https://img.shields.io/npm/v/session-signal.svg)](https://npmjs.org/package/session-signal) [![npm](https://img.shields.io/npm/dt/session-signal.svg)](https://www.npmjs.com/package/session-signal) [![Code coverage](https://img.shields.io/codecov/c/github/strong-roots-capital/session-signal.svg)](https://codecov.io/gh/strong-roots-capital/session-signal)
+# session-signal [![Build Status](https://travis-ci.org/strong-roots-capital/session-signal.svg?branch=master)](https://travis-ci.org/strong-roots-capital/session-signal) [![npm version](https://img.shields.io/npm/v/session-signal.svg)](https://npmjs.org/package/session-signal) [![Code coverage](https://img.shields.io/codecov/c/github/strong-roots-capital/session-signal.svg)](https://codecov.io/gh/strong-roots-capital/session-signal)
 
 
 > Emit a signal at end of desired session (UTC)
