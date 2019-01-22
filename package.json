@@ -1,6 +1,6 @@
 {
   "name": "session-signal",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Emit a signal at end of desired session (UTC)",
   "main": "dist/session-signal.js",
   "types": "dist/session-signal.d.ts",
